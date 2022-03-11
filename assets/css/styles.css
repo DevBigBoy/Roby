@@ -1,0 +1,276 @@
+/* 
+? ===================
+?       Fonts
+? ===================
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* 
+? ===================
+?  Custom Properties
+? ===================
+*/
+:root {
+  --header-height: 3rem;
+
+  /** Font Weight */
+  --fw-m: 500;
+  --fw-sb: 600;
+  --fw-l: 700;
+  /** colores */
+  --clr-dark: #141414;
+  --clr-light: #8a8a8a;
+  --clr-lighten: #f2f2f2;
+  --clr-white: #fff;
+  /** Font */
+  --body-font: "Poppins", sans-serif;
+  --smaller-font-size: 0.813rem;
+  --normal-font-size: 0.938rem;
+  --big-font-size: 1.25rem;
+  --bigger-font-size: 1.5rem;
+  --biggest-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+
+  /** Margenes */
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+  /** z index */
+  --z-fixed: 100;
+
+  /** Rotate img */
+  --rotate-img: rotate(-30deg);
+}
+@media (min-width: 768px) {
+  :root {
+    --smaller-font-size: 0.875rem;
+    --normal-font-size: 1rem;
+    --big-font-size: 1.5rem;
+    --bigger-font-size: 2rem;
+    --biggest-font-size: 3rem;
+  }
+}
+/* 
+? ===================
+?       Reset
+? ===================
+*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--fw-m);
+  color: var(--clr-dark);
+  line-height: 1.6;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* 
+? ===================
+?  utility Classes
+? ===================
+*/
+.section {
+  padding: 5rem 0 2rem;
+}
+.section-title {
+  position: relative;
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  width: 56px;
+  height: 0.18rem;
+  left: 0;
+  top: -1rem;
+  right: 0;
+  margin: auto;
+  background-color: var(--clr-dark);
+}
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  column-gap: 2rem;
+  width: calc(100% - 2rem);
+  margin-inline: var(--mb-2);
+}
+/* 
+? ===================
+?       Header
+? ===================
+*/
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--clr-lighten);
+}
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--clr-white);
+    transition: 0.5s;
+  }
+}
+.nav__item {
+  margin-bottom: var(--mb-4);
+}
+.nav__logo {
+  font-weight: var(--fw-sb);
+}
+.nav__toggle,
+.nav__shop {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.show {
+  left: 0;
+}
+.active {
+  position: relative;
+}
+.active::before {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 45%;
+  width: 4px;
+  height: 4px;
+  background-color: var(--clr-dark);
+  border-radius: 50%;
+}
+.scroll-header {
+  background-color: var(--clr-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 00.1rem);
+}
+/* 
+? ===================
+?       Home
+? ===================
+*/
+.home {
+  background-color: var(--clr-lighten);
+  overflow: hidden;
+}
+.home__container {
+  height: calc(100vh - var(--header-height));
+}
+.home__sneaker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.home__shape {
+  width: 220px;
+  height: 220px;
+  background-color: var(--clr-dark);
+  border-radius: 50%;
+}
+.home__img {
+  position: absolute;
+  top: 1.5rem;
+  width: 275px;
+  transform: var(--rotate-img);
+}
+.home__new {
+  display: block;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--fw-sb);
+  margin-bottom: var(--mb-2);
+}
+.home__title {
+  font-size: var(--bigger-font-size);
+  margin-bottom: var(--mb-1);
+}
+.home__description {
+  margin-bottom: var(--mb-6);
+}
+.button {
+  display: inline-block;
+  background-color: var(--clr-dark);
+  color: var(--clr-white);
+  padding: 1.125rem 2rem;
+  font-weight: var(--fw-m);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.button:hover {
+  transform: translateY(-0.25rem);
+}
+/* 
+? ===================
+?      Collection
+? ===================
+*/
+/* 
+? ===================
+?    WomanSneakers
+? ===================
+*/
+/* 
+? ===================
+?       Offer
+? ===================
+*/
+/* 
+? ===================
+?     NewCollection
+? ===================
+*/
+/* 
+? ===================
+?     NewsLetter
+? ===================
+*/
+/* 
+? ===================
+?       Footer
+? ===================
+*/
+/* 
+? ===================
+?   Media Queries
+? ===================
+*/ ;
