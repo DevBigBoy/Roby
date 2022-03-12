@@ -295,7 +295,7 @@ img {
 .sneaker__price {
   font-size: var(--h2-font-size);
   letter-spacing: 0.1rem;
-  font-weight: var(--fw-b);
+  font-weight: var(--fw-sb);
 }
 .sneaker__name {
   margin-bottom: var(--mb-1);
@@ -383,16 +383,128 @@ img {
 ?     NewCollection
 ? ===================
 */
+.new__container {
+  row-gap: 2rem;
+}
+.new__mens {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--clr-lighten);
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+.new__mens-img {
+  width: 276px;
+  margin-bottom: var(--mb-3);
+}
+.new__title {
+  font-size: var(--bigger-font-size);
+  margin-bottom: 0.25rem;
+}
+.new__price {
+  display: block;
+  margin-bottom: var(--mb-3);
+}
+.new__sneaker {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.new__sneaker-card {
+  position: relative;
+  padding: 3.5rem 1.5rem;
+  background-color: var(--clr-lighten);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.new__sneaker-img {
+  width: 220px;
+}
+.new__sneaker-overlay {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(138, 138, 138, 0.3);
+  transition: 0.3s;
+}
+.new__sneaker-card:hover .new__sneaker-overlay {
+  bottom: 0;
+}
 /* 
 ? ===================
 ?     NewsLetter
 ? ===================
 */
+.newsletter__container {
+  background-color: var(--clr-dark);
+  color: var(--clr-white);
+  padding: 2rem 0.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.newsletter__title {
+  font-size: var(--bigger-font-size);
+  margin-bottom: var(--mb-2);
+}
+.newsletter__desciption {
+  margin-bottom: var(--mb-5);
+}
+.newsletter__subscribe {
+  display: flex;
+  column-gap: 0.5rem;
+  background-color: var(--clr-white);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.newsletter__input {
+  outline: none;
+  border: none;
+  width: 90%;
+  font-size: var(--normal-font-size);
+}
+.newsletter__input::placeholder {
+  color: var(--clr-dark);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--fw-sb);
+}
 /* 
 ? ===================
 ?       Footer
 ? ===================
 */
+.footer__container {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.footer__title {
+  font-size: var(--big-font-size);
+}
+.footer__box {
+  margin-bottom: var(--mb-4);
+}
+.footer__link {
+  display: block;
+  width: max-content;
+  margin-bottom: var(--mb-1);
+}
+.footer__social {
+  font-size: 1.5rem;
+  margin-right: 1.25rem;
+}
+.footer__copy {
+  padding-top: 3rem;
+  font-size: var(--smaller-font-size);
+  color: var(--clr-light);
+  text-align: center;
+}
 /* 
 ? ===================
 ?   Media Queries
